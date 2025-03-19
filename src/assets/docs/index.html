@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityMail Component Documentation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --citymail-primary: #008731;
+      --citymail-primary-light: rgba(0, 135, 49, 0.19);
+      --citymail-dark: #004D1A;
+      --citymail-accent: #D85E16;
+    }
+    
+    .component-card {
+      transition: transform 0.3s;
+    }
+    .component-card:hover {
+      transform: translateY(-5px);
+    }
+    .example-container {
+      border: 1px solid #dee2e6;
+      border-radius: 0.375rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background-color: #f8f9fa;
+    }
+    .journey-point {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #E8F5EA;
+      color: var(--citymail-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .journey-line {
+      position: absolute;
+      width: 2px;
+      background-color: var(--citymail-primary);
+      left: 16px;
+      top: 32px;
+      bottom: 0;
+    }
+    pre {
+      background-color: #f8f9fa;
+      padding: 1rem;
+      border-radius: 0.375rem;
+    }
+    .citymail-card {
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    }
+    .text-citymail {
+      color: var(--citymail-primary);
+    }
+    .btn-citymail {
+      background-color: var(--citymail-primary);
+      color: white;
+    }
+    .delivery-option {
+      padding: 1rem 0;
+    }
+    .delivery-option-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #E8F5EA;
+      color: var(--citymail-primary);
+      border-radius: 50%;
+      font-size: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--citymail-primary-light);">
+    <div class="container">
+      <a class="navbar-brand text-citymail" href="#">CityMail Components</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#overview">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#header">Header</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#footer">Footer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#package-journey">Package Journey</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#delivery-options">Delivery Options</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#bottom-sheet">Bottom Sheet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="/" target="_blank">View App</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <section id="overview" class="mb-5">
+      <h1>CityMail Component Documentation</h1>
+      <p class="lead">
+        This documentation provides examples and usage information for all components used in the CityMail application.
+      </p>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+        <div class="col">
+          <div class="card h-100 component-card">
+            <div class="card-body">
+              <h5 class="card-title">Header</h5>
+              <h6 class="card-subtitle mb-2 text-muted">app-header</h6>
+              <p class="card-text">Top navigation bar with CityMail branding and navigation icons</p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <a href="#header" class="btn btn-outline-success" style="color: var(--citymail-primary); border-color: var(--citymail-primary);">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 component-card">
+            <div class="card-body">
+              <h5 class="card-title">Footer</h5>
+              <h6 class="card-subtitle mb-2 text-muted">app-footer</h6>
+              <p class="card-text">Page footer with links and contact information</p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <a href="#footer" class="btn btn-outline-success" style="color: var(--citymail-primary); border-color: var(--citymail-primary);">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 component-card">
+            <div class="card-body">
+              <h5 class="card-title">Package Journey</h5>
+              <h6 class="card-subtitle mb-2 text-muted">app-package-journey</h6>
+              <p class="card-text">Timeline showing the package delivery status and history</p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <a href="#package-journey" class="btn btn-outline-success" style="color: var(--citymail-primary); border-color: var(--citymail-primary);">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 component-card">
+            <div class="card-body">
+              <h5 class="card-title">Delivery Options</h5>
+              <h6 class="card-subtitle mb-2 text-muted">app-delivery-options</h6>
+              <p class="card-text">Options to modify delivery method, timing, and sharing</p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <a href="#delivery-options" class="btn btn-outline-success" style="color: var(--citymail-primary); border-color: var(--citymail-primary);">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 component-card">
+            <div class="card-body">
+              <h5 class="card-title">Bottom Sheet</h5>
+              <h6 class="card-subtitle mb-2 text-muted">bottom-sheet</h6>
+              <p class="card-text">Animated sheet that slides in from the bottom with adaptive height</p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <a href="#bottom-sheet" class="btn btn-outline-success" style="color: var(--citymail-primary); border-color: var(--citymail-primary);">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="header" class="mb-5">
+      <h2 class="border-bottom pb-2">Header Component</h2>
+      <p class="lead">
+        The Header component displays the CityMail navigation bar with a logo and navigation icons.
+        It's typically used at the top of each page in the application.
+      </p>
+
+      <h3>Example</h3>
+      <div class="example-container">
+        <header class="d-flex justify-content-between align-items-center p-3">
+          <a href="#" class="text-citymail">
+            <i class="bi bi-globe fs-4"></i>
+          </a>
+          <div style="width: 42px;">
+            <img src="../images/citymail-logo.svg" alt="Citymail" class="w-100">
+          </div>
+          <a href="#" class="text-citymail">
+            <i class="bi bi-info-circle fs-4"></i>
+          </a>
+        </header>
+      </div>
+
+      <h3>Usage</h3>
+      <pre><code>&lt;app-header&gt;&lt;/app-header&gt;</code></pre>
+
+      <h3>API</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>No props</td>
+            <td>-</td>
+            <td>-</td>
+            <td>This component doesn't accept any inputs</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Template Structure</h3>
+      <pre><code>&lt;header class="d-flex justify-content-between align-items-center p-3"&gt;
+  &lt;a href="#" class="text-citymail"&gt;
+    &lt;i class="bi bi-globe fs-4"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;div style="width: 42px;"&gt;
+    &lt;img src="assets/images/citymail-logo.svg" alt="Citymail" class="w-100"&gt;
+  &lt;/div&gt;
+  &lt;a href="#" class="text-citymail"&gt;
+    &lt;i class="bi bi-info-circle fs-4"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/header&gt;</code></pre>
+    </section>
+
+    <section id="footer" class="mb-5">
+      <h2 class="border-bottom pb-2">Footer Component</h2>
+      <p class="lead">
+        The Footer component displays the page footer with links and contact information.
+      </p>
+
+      <h3>Example</h3>
+      <div class="example-container">
+        <footer class="mt-auto p-3">
+          <div class="d-flex justify-content-center small text-muted">
+            <a href="#" class="text-decoration-none text-muted me-3">Kontakta oss</a>
+            <a href="#" class="text-decoration-none text-muted me-3">Hjälp</a>
+            <a href="#" class="text-decoration-none text-muted">Villkor</a>
+          </div>
+        </footer>
+      </div>
+
+      <h3>Usage</h3>
+      <pre><code>&lt;app-footer&gt;&lt;/app-footer&gt;</code></pre>
+
+      <h3>API</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>No props</td>
+            <td>-</td>
+            <td>-</td>
+            <td>This component doesn't accept any inputs</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="package-journey" class="mb-5">
+      <h2 class="border-bottom pb-2">Package Journey Component</h2>
+      <p class="lead">
+        The Package Journey component displays a timeline of the package's delivery journey.
+        It shows each status update with location, timestamp, and description.
+      </p>
+
+      <h3>Example</h3>
+      <div class="example-container">
+        <div class="citymail-card">
+          <h2 class="fs-4 fw-semibold mb-4">Paketets resa</h2>
+          <div class="position-relative mb-4">
+            <div class="d-flex gap-3 mb-4">
+              <div class="journey-point">
+                <i class="bi bi-check-square"></i>
+              </div>
+              <div>
+                <div class="fw-medium">Årsta</div>
+                <div class="small text-secondary">Igår 16:48</div>
+                <div class="small">Paketet har ankommit till terminal</div>
+              </div>
+            </div>
+            <div class="journey-line"></div>
+            <div class="d-flex gap-3">
+              <div class="journey-point">
+                <i class="bi bi-building"></i>
+              </div>
+              <div>
+                <div class="fw-medium">Citymail</div>
+                <div class="small text-secondary">26 jan 18:40</div>
+                <div class="small">Paketet har aviserats, men ännu inte lämnats in till Citymail</div>
+              </div>
+            </div>
+          </div>
+          <button class="text-citymail fw-medium border-0 bg-transparent">
+            Visa mer
+          </button>
+        </div>
+      </div>
+
+      <h3>Usage</h3>
+      <pre><code>&lt;app-package-journey&gt;&lt;/app-package-journey&gt;</code></pre>
+
+      <h3>API</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>journeyPoints</td>
+            <td>JourneyPoint[]</td>
+            <td>Array of journey points displayed in the timeline</td>
+          </tr>
+          <tr>
+            <td>showAllPoints</td>
+            <td>boolean</td>
+            <td>Controls whether all points are displayed or just recent ones</td>
+          </tr>
+          <tr>
+            <td>toggleShowAll()</td>
+            <td>function</td>
+            <td>Method to toggle between showing all points and showing only recent ones</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>JourneyPoint Interface</h3>
+      <pre><code>export interface JourneyPoint {
+  location: string;
+  timestamp: string;
+  description: string;
+  icon: string;
+  status: 'completed' | 'pending';
+}</code></pre>
+    </section>
+
+    <section id="delivery-options" class="mb-5">
+      <h2 class="border-bottom pb-2">Delivery Options Component</h2>
+      <p class="lead">
+        The Delivery Options component presents delivery modification options like early delivery,
+        changing delivery method, and sharing delivery tracking.
+      </p>
+
+      <h3>Example</h3>
+      <div class="example-container">
+        <div class="citymail-card">
+          <h2 class="fs-4 fw-semibold mb-4">Leveransalternativ</h2>
+          <div class="border-top border-bottom">
+            <button class="delivery-option w-100 d-flex align-items-center justify-content-between border-0 bg-transparent">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-lightning-charge delivery-option-icon"></i>
+                <div>
+                  <div class="fw-medium">Tidigarelägg din leverans</div>
+                  <div class="small">19 kr</div>
+                  <div class="small text-secondary">Tidigast imorgon</div>
+                </div>
+              </div>
+              <div class="text-citymail">›</div>
+            </button>
+          </div>
+          <div class="border-bottom">
+            <button class="delivery-option w-100 d-flex align-items-center justify-content-between border-0 bg-transparent">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-box-seam delivery-option-icon"></i>
+                <div>
+                  <div class="fw-medium">Byt leveranssätt</div>
+                  <div class="small">29-39 kr</div>
+                  <div class="small text-secondary">Byt till ombud eller paketbox</div>
+                </div>
+              </div>
+              <div class="text-citymail">›</div>
+            </button>
+          </div>
+          <div>
+            <button class="delivery-option w-100 d-flex align-items-center justify-content-between border-0 bg-transparent">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-share delivery-option-icon"></i>
+                <div>
+                  <div class="fw-medium">Dela din leverans</div>
+                  <div class="small text-secondary">Låt någon annan följa ditt paket</div>
+                </div>
+              </div>
+              <div class="text-citymail">›</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Usage</h3>
+      <pre><code>&lt;app-delivery-options&gt;&lt;/app-delivery-options&gt;</code></pre>
+
+      <h3>API</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Property/Method</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>email</td>
+            <td>string</td>
+            <td>User email for early delivery option</td>
+          </tr>
+          <tr>
+            <td>termsAccepted</td>
+            <td>boolean</td>
+            <td>Flag indicating if terms and conditions are accepted</td>
+          </tr>
+          <tr>
+            <td>openEarlyDeliveryModal()</td>
+            <td>function</td>
+            <td>Opens the early delivery modal</td>
+          </tr>
+          <tr>
+            <td>openChangeDeliveryModal()</td>
+            <td>function</td>
+            <td>Opens the change delivery method modal</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <section id="bottom-sheet" class="mb-5">
+      <h2 class="border-bottom pb-2">Bottom Sheet Component</h2>
+      <p class="lead">
+        The Bottom Sheet component is a modal that slides up from the bottom of the screen, taking only as much vertical space as needed for its content.
+      </p>
+
+      <h3>Example</h3>
+      <div class="example-container">
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-citymail" onclick="document.getElementById('demoBottomSheet').classList.add('show')">
+            Open Bottom Sheet
+          </button>
+        </div>
+        <div id="demoBottomSheet" class="position-relative mt-3" style="height: 300px; overflow: hidden; border-radius: 8px;">
+          <div class="position-absolute w-100 bg-white" style="bottom: 0; border-top-left-radius: 1.5rem; border-top-right-radius: 1.5rem; transform: translateY(0); transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: 0 -2px 10px rgba(0,0,0,0.1);">
+            <div class="p-3 border-bottom">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="modal-title fs-4 fw-bold">Bottom Sheet Title</h5>
+                <button type="button" class="btn-close" onclick="document.getElementById('demoBottomSheet').classList.remove('show')"></button>
+              </div>
+            </div>
+            <div class="p-3">
+              <p>This is a bottom sheet that animates in from the bottom of the screen.</p>
+              <p>It only takes up as much vertical space as needed for its content.</p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-citymail" onclick="document.getElementById('demoBottomSheet').classList.remove('show')">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Usage</h3>
+      <pre><code>&lt;!-- Modal Structure -->
+&lt;div class="modal fade" id="myBottomSheet">
+  &lt;div class="modal-dialog modal-auto-height">
+    &lt;div class="modal-content bottom-sheet bottom-sheet-container">
+      &lt;div class="modal-header">
+        &lt;h5 class="modal-title">Sheet Title&lt;/h5>
+        &lt;button type="button" class="btn-close" data-bs-dismiss="modal">&lt;/button>
+      &lt;/div>
+      &lt;div class="modal-body">
+        &lt;!-- Sheet content -->
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+
+&lt;!-- JavaScript -->
+const modal = new bootstrap.Modal(document.getElementById('myBottomSheet'));
+modal.show();</code></pre>
+
+      <h3>CSS Classes</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bottom-sheet</code></td>
+            <td>Applies rounded corners to the top of the sheet</td>
+          </tr>
+          <tr>
+            <td><code>bottom-sheet-container</code></td>
+            <td>Handles the slide-in animation from bottom</td>
+          </tr>
+          <tr>
+            <td><code>modal-auto-height</code></td>
+            <td>Makes the sheet take only as much space as needed (up to 85vh)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Animation Details</h3>
+      <pre><code>/* Bottom sheet animation and sizing */
+.modal.fade .bottom-sheet-container {
+  transform: translateY(100%);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modal.show .bottom-sheet-container {
+  transform: translateY(0);
+}
+
+/* Override Bootstrap's modal size for auto-height */
+.modal-auto-height {
+  max-height: 85vh;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}</code></pre>
+    </section>
+  </div>
+
+  <footer class="text-center text-white py-4 mt-5" style="background-color: var(--citymail-dark);">
+    <div class="container">
+      <p>CityMail Component Documentation</p>
+      <p class="small">This documentation is for development purposes</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

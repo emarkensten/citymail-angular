@@ -1,0 +1,143 @@
+<div class="component-showcase">
+  <!-- Component Description -->
+  <div class="mb-5">
+    <h2>Description</h2>
+    <p class="lead">
+      The Package Journey component displays a timeline of the package's delivery journey. 
+      It shows each status update with location, timestamp, and description.
+    </p>
+  </div>
+
+  <!-- Live Example -->
+  <div class="mb-5">
+    <h2>Live Example</h2>
+    <div class="example-container p-3 border rounded bg-light">
+      <app-package-journey></app-package-journey>
+    </div>
+  </div>
+
+  <!-- Interactive Controls -->
+  <div class="mb-5">
+    <h2>Interactive Controls</h2>
+    <p>Create a custom journey point to see how it would appear in the timeline.</p>
+    
+    <div class="card mb-4">
+      <div class="card-header">
+        Create Journey Point
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input type="text" class="form-control" id="location" [(ngModel)]="newPoint.location" placeholder="Stockholm">
+        </div>
+        
+        <div class="mb-3">
+          <label for="timestamp" class="form-label">Timestamp</label>
+          <input type="text" class="form-control" id="timestamp" [(ngModel)]="newPoint.timestamp" placeholder="Idag 14:30">
+        </div>
+        
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input type="text" class="form-control" id="description" [(ngModel)]="newPoint.description" placeholder="Paketet är på väg till utdelning">
+        </div>
+        
+        <div class="mb-3">
+          <label for="icon" class="form-label">Icon</label>
+          <select class="form-select" id="icon" [(ngModel)]="newPoint.icon">
+            <option value="check-square">check-square</option>
+            <option value="building">building</option>
+            <option value="truck">truck</option>
+            <option value="box">box</option>
+            <option value="circle">circle</option>
+          </select>
+        </div>
+        
+        <div class="mb-3">
+          <label for="status" class="form-label">Status</label>
+          <select class="form-select" id="status" [(ngModel)]="newPoint.status">
+            <option value="completed">completed</option>
+            <option value="pending">pending</option>
+          </select>
+        </div>
+        
+        <button class="btn btn-primary" (click)="addJourneyPoint()" [disabled]="!newPoint.location || !newPoint.timestamp || !newPoint.description">
+          Add Journey Point
+        </button>
+      </div>
+    </div>
+    
+    <div *ngIf="sampleJourneyPoints.length > 0">
+      <h3>Custom Journey Preview</h3>
+      <div class="custom-journey-preview p-3 border rounded">
+        <div class="position-relative mb-4">
+          <ng-container *ngFor="let point of sampleJourneyPoints; let i = index; let last = last">
+            <div class="d-flex gap-3" [class.mb-4]="!last">
+              <div class="journey-point">
+                <i class="bi bi-{{point.icon}}"></i>
+              </div>
+              <div>
+                <div class="fw-medium">{{point.location}}</div>
+                <div class="small text-secondary">{{point.timestamp}}</div>
+                <div class="small">{{point.description}}</div>
+              </div>
+            </div>
+            <div *ngIf="!last" class="journey-line"></div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HTML Usage -->
+  <div class="mb-5">
+    <h2>Usage</h2>
+    <div class="card">
+      <div class="card-header">
+        HTML
+      </div>
+      <div class="card-body">
+        <pre><code>{{ usageExample }}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- API Documentation -->
+  <div>
+    <h2>API</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>journeyPoints</td>
+          <td>JourneyPoint[]</td>
+          <td>Array of journey points displayed in the timeline</td>
+        </tr>
+        <tr>
+          <td>showAllPoints</td>
+          <td>boolean</td>
+          <td>Controls whether all points are displayed or just recent ones</td>
+        </tr>
+        <tr>
+          <td>toggleShowAll()</td>
+          <td>function</td>
+          <td>Method to toggle between showing all points and showing only recent ones</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h3 class="mt-4">JourneyPoint Interface</h3>
+    <pre><code>export interface JourneyPoint {
+  location: string;
+  timestamp: string;
+  description: string;
+  icon: string;
+  status: 'completed' | 'pending';
+}</code></pre>
+  </div>
+</div>

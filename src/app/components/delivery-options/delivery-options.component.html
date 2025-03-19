@@ -1,0 +1,121 @@
+<div class="citymail-card">
+  <h2 class="fs-4 fw-semibold mb-4">Leveransalternativ</h2>
+
+  <div class="border-top border-bottom">
+    <button class="delivery-option w-100 d-flex align-items-center justify-content-between border-0 bg-transparent" 
+            (click)="openEarlyDeliveryModal()">
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-lightning-charge delivery-option-icon"></i>
+        <div>
+          <div class="fw-medium">Tidigarelägg din leverans</div>
+          <div class="small">19 kr</div>
+          <div class="small text-secondary">Tidigast imorgon</div>
+        </div>
+      </div>
+      <div class="text-citymail">›</div>
+    </button>
+  </div>
+
+  <div class="border-bottom">
+    <button class="delivery-option w-100 d-flex align-items-center justify-content-between border-0 bg-transparent"
+            (click)="openChangeDeliveryModal()">
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-box-seam delivery-option-icon"></i>
+        <div>
+          <div class="fw-medium">Byt leveranssätt</div>
+          <div class="small">29-39 kr</div>
+          <div class="small text-secondary">Byt till ombud eller paketbox</div>
+        </div>
+      </div>
+      <div class="text-citymail">›</div>
+    </button>
+  </div>
+
+  <div>
+    <button class="delivery-option w-100 d-flex align-items-center justify-content-between border-0 bg-transparent">
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-share delivery-option-icon"></i>
+        <div>
+          <div class="fw-medium">Dela din leverans</div>
+          <div class="small text-secondary">Låt någon annan följa ditt paket</div>
+        </div>
+      </div>
+      <div class="text-citymail">›</div>
+    </button>
+  </div>
+</div>
+
+<!-- Early Delivery Modal -->
+<div class="modal fade" id="earlyDeliveryModal" tabindex="-1" aria-labelledby="earlyDeliveryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-auto-height">
+    <div class="modal-content bottom-sheet bottom-sheet-container">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fs-4 fw-bold d-flex align-items-center gap-2" id="earlyDeliveryModalLabel">
+          <i class="bi bi-lightning-charge text-citymail"></i>
+          Tidigarelägg din leverans
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <span class="fs-4 fw-semibold">19 kr</span>
+        </div>
+        <p class="mb-4">Paketet kan levereras den 31 jan istället.</p>
+        <div class="mb-4">
+          <label for="email" class="form-label fw-medium">Ange e-postadress</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="email" placeholder="test@mail.se">
+          <p class="form-text">Vi behöver din email för att kunna maila ett kvitto</p>
+        </div>
+        <div class="form-check custom-checkbox mb-4">
+          <input type="checkbox" class="form-check-input" id="terms" [(ngModel)]="termsAccepted">
+          <label class="form-check-label small" for="terms">
+            Jag godkänner <a href="#" class="text-citymail text-decoration-underline">köp och leveransvillkoren</a>
+          </label>
+        </div>
+        <button class="btn btn-citymail w-100" [disabled]="!email || !termsAccepted">
+          Betala 19 kr med swish
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Change Delivery Modal -->
+<div class="modal fade" id="changeDeliveryModal" tabindex="-1" aria-labelledby="changeDeliveryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-auto-height">
+    <div class="modal-content bottom-sheet bottom-sheet-container">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fs-4 fw-bold" id="changeDeliveryModalLabel">Välj leveransalternativ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="border-top border-bottom">
+          <button class="delivery-option w-100 d-flex align-items-center justify-content-between border-0 bg-transparent">
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-box-seam delivery-option-icon"></i>
+              <div>
+                <div class="fw-medium">Paketskåp</div>
+                <div class="small">29 kr</div>
+                <div class="small text-secondary">Levereras om 1-2 arbetsdagar</div>
+              </div>
+            </div>
+            <div class="text-citymail">›</div>
+          </button>
+        </div>
+        <div class="border-bottom">
+          <button class="delivery-option w-100 d-flex align-items-center justify-content-between border-0 bg-transparent">
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-building delivery-option-icon"></i>
+              <div>
+                <div class="fw-medium">Ombud</div>
+                <div class="small">39 kr</div>
+                <div class="small text-secondary">Levereras om 1-2 arbetsdagar</div>
+              </div>
+            </div>
+            <div class="text-citymail">›</div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

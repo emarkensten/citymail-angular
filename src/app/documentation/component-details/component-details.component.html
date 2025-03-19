@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar Navigation -->
+    <div class="col-md-3 col-lg-2 d-md-block sidebar">
+      <div class="position-sticky pt-3">
+        <h6 class="sidebar-heading px-3 mt-4 mb-1 text-muted">
+          Components
+        </h6>
+        <ul class="nav flex-column">
+          <li class="nav-item" *ngFor="let component of components">
+            <a [routerLink]="component.route" 
+               class="nav-link" 
+               [class.active]="activeComponent === component.name">
+              {{ component.name }}
+            </a>
+          </li>
+        </ul>
+        <div class="mt-4 px-3">
+          <a routerLink="/docs" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left"></i> Back to Overview
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 col-lg-10 ms-sm-auto px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1>{{ activeComponent }} Component</h1>
+      </div>
+      
+      <!-- Router Outlet for Component Showcase -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

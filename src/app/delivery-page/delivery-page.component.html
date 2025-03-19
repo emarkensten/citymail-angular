@@ -1,0 +1,55 @@
+<div class="citymail-container">
+  <!-- Header -->
+  <app-header></app-header>
+
+  <!-- Main Content -->
+  <main class="px-3 pb-5">
+    <!-- Loading State -->
+    <div *ngIf="loading" class="text-center my-5">
+      <div class="spinner-border text-citymail" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2">Laddar paketinformation...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error" class="alert alert-danger">
+      {{ error }}
+      <button class="btn btn-sm btn-outline-danger ms-2" (click)="loadPackageInfo()">Försök igen</button>
+    </div>
+
+    <!-- Loaded Content -->
+    <ng-container *ngIf="!loading && !error && packageInfo">
+      <div class="mb-4">
+        <h1 class="fs-3 fw-bold mb-1">Ditt paket från Meds apotek levereras snart!</h1>
+        <p class="fs-5">
+          <span class="text-citymail-accent fw-medium">På väg</span> levereras {{ packageInfo.estimatedDelivery }}
+        </p>
+      </div>
+
+      <!-- Delivery Information -->
+      <div class="citymail-card">
+        <h2 class="fs-4 fw-semibold mb-4">Leveransinformation</h2>
+        <div class="mb-2 fw-medium">Hemleverans</div>
+        <p class="mb-1">Ditt paket levereras till {{ packageInfo.address }}</p>
+        <p>Levereras {{ packageInfo.deliveryTime }}</p>
+      </div>
+
+      <!-- Delivery Options -->
+      <app-delivery-options></app-delivery-options>
+
+      <!-- Package Journey -->
+      <app-package-journey></app-package-journey>
+
+      <!-- Package Information -->
+      <div class="citymail-card">
+        <h2 class="fs-4 fw-semibold mb-4">Paketinformation</h2>
+        <div class="fw-medium">Paket</div>
+        <div>Spårningsnummer: {{ packageInfo.trackingNumber }}</div>
+      </div>
+    </ng-container>
+  </main>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>

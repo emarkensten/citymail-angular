@@ -1,0 +1,9 @@
+.journey-line {
+  position: absolute;
+  top: 35px;
+  bottom: 35px;
+  left: 18px;
+  width: 2px;
+  border-left: 2px dashed var(--citymail-primary);
+  z-index: 0;
+}

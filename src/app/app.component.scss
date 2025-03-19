@@ -1,0 +1,19 @@
+.docs-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  
+  .btn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    
+    i {
+      font-size: 1.2rem;
+    }
+  }
+}

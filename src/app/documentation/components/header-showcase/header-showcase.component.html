@@ -1,0 +1,64 @@
+<div class="component-showcase">
+  <!-- Component Description -->
+  <div class="mb-5">
+    <h2>Description</h2>
+    <p class="lead">
+      The Header component displays the CityMail navigation bar with a logo and navigation icons.
+      It's typically used at the top of each page in the application.
+    </p>
+  </div>
+
+  <!-- Live Example -->
+  <div class="mb-5">
+    <h2>Live Example</h2>
+    <div class="example-container">
+      <app-header></app-header>
+    </div>
+  </div>
+
+  <!-- Interactive Controls -->
+  <div class="mb-5">
+    <h2>Interactive Controls</h2>
+    <div class="mb-3">
+      <button class="btn btn-primary me-2" (click)="toggleLogoSrc()">
+        Toggle Logo Source
+      </button>
+    </div>
+  </div>
+
+  <!-- HTML Usage -->
+  <div class="mb-5">
+    <h2>Usage</h2>
+    <div class="card">
+      <div class="card-header">
+        HTML
+      </div>
+      <div class="card-body">
+        <pre><code>{{ usageExample }}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- API Documentation -->
+  <div>
+    <h2>API</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>@Input() logoSrc</td>
+          <td>string</td>
+          <td>'assets/images/citymail-logo.svg'</td>
+          <td>Path to the logo image</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

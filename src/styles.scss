@@ -1,0 +1,131 @@
+/* Custom Citymail colors and styling */
+:root {
+  --citymail-primary: #008731;
+  --citymail-primary-light: rgba(0, 135, 49, 0.19);
+  --citymail-dark: #004D1A;
+  --citymail-accent: #D85E16;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom, var(--citymail-primary-light), transparent);
+  min-height: 100vh;
+}
+
+/* Override Bootstrap colors */
+.bg-citymail {
+  background-color: var(--citymail-primary) !important;
+}
+
+.bg-citymail-light {
+  background-color: var(--citymail-primary-light) !important;
+}
+
+.text-citymail {
+  color: var(--citymail-primary) !important;
+}
+
+.text-citymail-accent {
+  color: var(--citymail-accent) !important;
+}
+
+.btn-citymail {
+  background-color: var(--citymail-primary);
+  border-color: var(--citymail-primary);
+  color: white;
+}
+
+.btn-citymail:hover,
+.btn-citymail:focus {
+  background-color: #007029;
+  border-color: #007029;
+  color: white;
+}
+
+/* Component styling */
+.citymail-footer {
+  background-color: var(--citymail-dark);
+  color: white;
+}
+
+.citymail-card {
+  background-color: white;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.journey-point {
+  background-color: #E8F5EA;
+  color: var(--citymail-primary);
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.journey-line {
+  position: absolute;
+  left: 1.125rem;
+  width: 2px;
+  border-left: 2px dashed var(--citymail-primary);
+  z-index: 0;
+}
+
+/* Modal styling */
+.bottom-sheet {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+/* Bottom sheet animation and sizing */
+.modal.fade .bottom-sheet-container {
+  transform: translateY(100%);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modal.show .bottom-sheet-container {
+  transform: translateY(0);
+}
+
+/* Override Bootstrap's modal size for auto-height */
+.modal-auto-height {
+  max-height: 85vh;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.custom-checkbox .form-check-input:checked {
+  background-color: var(--citymail-primary);
+  border-color: var(--citymail-primary);
+}
+
+/* Delivery option button styling */
+.delivery-option {
+  text-align: left;
+  padding: 1rem;
+  transition: background-color 0.2s;
+}
+
+.delivery-option:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.delivery-option-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--citymail-primary);
+}
+
+/* Container max width for consistent look */
+.citymail-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
